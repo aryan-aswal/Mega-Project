@@ -21,7 +21,7 @@ const resetPasswordToken = async(req, res) => {
 
         await User.findOneAndUpdate({email: email}, {token: token, resetPasswordExpires: Date.now() + 5 * 60 * 1000}, {new: true});
          
-        const url =  `https://studynotion-frontend-virid.vercel.app/update-password/${token}`;
+        const url =  `https://mega-project-neon.vercel.app/update-password/${token}`;
 
         await mailSender(
 			email,
